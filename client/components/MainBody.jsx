@@ -10,6 +10,7 @@ const mapStateToProps = (store) => ({
   arrivalDate: store.dumbletour.arrivalDate,
   departureDate: store.dumbletour.departureDate,
   searchResults: store.dumbletour.searchResults,
+  itinerary: store.dumbletour.itinerary
 }); 
 
 const mapDispatchToProps = dispatch =>({
@@ -31,9 +32,10 @@ class MainBody extends Component{
                               www={r.www}
                               ig={r.ig}
                               id={r.id}
+                              itineraryItems={Object.keys(this.props.itinerary)}
                               addToItinerary={this.props.addToItineraryRequest}/>;});
         return(
-        <div className="main-body">
+        <div className={this.props.searchBoxIsOpen ? "main-body-with-modal": "main-body-without-modal" }>
           {this.props.searchBoxIsOpen ? 
           <Fragment>
             <SearchModal />

@@ -7,7 +7,7 @@ const ResultCard = props =>(
     <div className="card-www">{props.www}</div>
     <div className="card-ig">{props.ig}</div>
     <div className="card-price">{props.price}</div>
-    <button className="add-button" id={props.id} onClick={(e) => props.addToItinerary(e.target.id)}>add</button>
+    <div className={props.itineraryItems.includes(props.id + '') ? "liked-heart" : "not-liked-heart"} id={props.id} onClick={(e) => props.addToItinerary(e.target.id)}></div>
   </div> 
 )
 
