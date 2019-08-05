@@ -50,7 +50,7 @@ class SearchModal extends Component {
             Coming back?
             <input type='date'value={this.props.departureDate} onChange={(e) => this.props.handleDepartureDate(e)}></input>
             </label>
-            <button onClick={(e)=> this.props.submitSearch(e)}>Find me the cool shit!</button>
+            <button onClick={(e)=> this.props.submitSearch(e)}>Accio Adventure!</button>
           </form>
         </span>
         )
