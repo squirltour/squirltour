@@ -40,17 +40,17 @@ class SearchModal extends Component {
           <form className="search-form">
             <label>
               Experience destination ?
-            <input type='text' value={this.props.location} onChange={(e) => this.props.handleKey(e)} placeholder='City'></input>
+            <input type='text' value={this.props.location} onChange={(e) => this.props.handleKey(e)} placeholder='City' required></input>
             </label>
             <label>
             When are you going?
-            <input type='date' value={this.props.arrivalDate} onChange={(e) => this.props.handleArrivalDate(e)}></input>
+            <input type='date' value={this.props.arrivalDate} onChange={(e) => this.props.handleArrivalDate(e)} required></input>
             </label>
             <label>
             Coming back?
-            <input type='date'value={this.props.departureDate} onChange={(e) => this.props.handleDepartureDate(e)}></input>
+            <input type='date'value={this.props.departureDate} onChange={(e) => this.props.handleDepartureDate(e)} required></input>
             </label>
-            <button onClick={(e)=> this.props.submitSearch(e)}>Find me the cool shit!</button>
+            <button onClick={(e)=> this.props.submitSearch(e)}>Accio Adventure 🔮</button>
           </form>
         </span>
         )

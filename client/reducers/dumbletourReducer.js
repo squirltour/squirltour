@@ -11,6 +11,7 @@ const initialState = {
   departureDate: '',
   searchResults: [],
   itinerary: {},
+  itineraryVisible: false
 };
 
 const dumbletourReducer = (state = initialState, action) => {
@@ -69,6 +70,14 @@ const dumbletourReducer = (state = initialState, action) => {
         ...state,
         searchResults: [...action.payload],
         searchBoxIsOpen,
+      };
+    }
+
+    case types.SHOW_ITINERARY: {
+      const itineraryVisibile = true;
+      return {
+        ...state,
+        itineraryVisibile
       };
     }
 

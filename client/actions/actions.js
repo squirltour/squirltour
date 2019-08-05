@@ -33,6 +33,9 @@ export const addToItinerary = addedItem => ({
   payload: addedItem,
 });
 
+export const showItinerary = () => ({
+  type: types.SHOW_ITINERARY
+})
 // thunk that handles search request
 export const submitSearch = () => (dispatch, getState) => {
   const {
