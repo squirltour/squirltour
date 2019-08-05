@@ -36,6 +36,8 @@ passport.use(
           username: profile.displayName,
           googleId: profile.id,
           userImg: profile._json.picture,
+          email: profile.email,
+          itinerary: [],
         }).save().then((newUser) => {
           console.log('New user created:', newUser)
           done(null, newUser);
