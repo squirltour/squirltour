@@ -21,6 +21,7 @@ class NavOptions extends Component{
         super(props);
     }
 
+
     render(){
         return(
             <Fragment>
@@ -30,9 +31,11 @@ class NavOptions extends Component{
             {/* <Login/>
             <Itinerary/>
             <Cart/> */}
-        </Fragment>
+            </Fragment>
         )
     }
+
+   
  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavOptions);
