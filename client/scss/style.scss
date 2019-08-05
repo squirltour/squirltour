@@ -14,6 +14,12 @@ $btn-color: rgb(115, 216, 203);
   margin: 0;
 }
 
+#g-signin2{
+  margin-left: 0;
+  border: 3px solid chartreuse;
+  height: 3rem;
+}
+
 .nav-bar{
   position: fixed;
   display: flex;
