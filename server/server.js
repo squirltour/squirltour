@@ -5,6 +5,7 @@ const fetch = require('isomorphic-fetch');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
+const apiRoutes = require('./routes/api-routes');
 const passportSetup = require('./oauth-config/passport-setup');
 const authKeys = require('./oauth-config/auth-keys');
 const { MongoClient } = require('mongodb');
@@ -37,32 +38,33 @@ app.use(passport.session());
 // authorization
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+app.use('/api', apiRoutes);
 // TEMPORARY OAUTH TEST
 // view engine
-// app.set('view engine', 'ejs');
-// app.get('/', (req, res) => {
-//   res.render('./../client/auth-test.ejs');
-// });
+app.set('view engine', 'ejs');
+app.get('/', (req, res) => {
+  res.render('./../client/auth-test.ejs');
+});
 
 
 // TEMPORARY ROUTES START
-app.post('/api/search', (req, res) => {
-  const stubResults = [];
-  const resultTemplate = {
-    imgUrl: 'http://via.placeholder.com/350x460',
-    price: '50.99',
-    www: 'www.tourists-are-us.com',
-    ig: '#livelaughlove',
-  };
-  for (let i = 20; i > 0; i -= 1) {
-    const name = `Lorem Ipssum ${i}`;
-    const id = i;
-    stubResults.push({ ...resultTemplate, name, id });
-  }
-  res.status(200);
-  res.setHeader('Content-type', 'application/json');
-  res.json(stubResults);
-});
+// app.post('/api/search', (req, res) => {
+//   const stubResults = [];
+//   const resultTemplate = {
+//     imgUrl: 'http://via.placeholder.com/350x460',
+//     price: '50.99',
+//     www: 'www.tourists-are-us.com',
+//     ig: '#livelaughlove',
+//   };
+//   for (let i = 20; i > 0; i -= 1) {
+//     const name = `Lorem Ipssum ${i}`;
+//     const id = i;
+//     stubResults.push({ ...resultTemplate, name, id });
+//   }
+//   res.status(200);
+//   res.setHeader('Content-type', 'application/json');
+//   res.json(stubResults);
+// });
 
 app.put('/api/itinerary/add', (req, res) => {
   const { id, user } = req.body;
