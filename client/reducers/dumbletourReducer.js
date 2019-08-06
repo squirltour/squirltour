@@ -5,8 +5,8 @@ const initialState = {
   registrationIsOpen: false,
   searchBoxIsOpen: true,
   location: '',
-  longitude: 'long',
-  latitude: 'lat',
+  longitude: 33.981401,
+  latitude: -118.411467,
   arrivalDate: '',
   departureDate: '',
   searchResults: [],
@@ -64,10 +64,18 @@ const dumbletourReducer = (state = initialState, action) => {
     }
 
     case types.PROCESS_SEARCH_RESULTS: {
+      const transformedResults = action.payload.map((event) => ({
+        // imgUrl: 'http://via.placeholder.com/350x460',
+        imgUrl: 'https://i.imgur.com/IVf2QCK.jpg',
+        name: event.company,
+        price: event.price,
+        www: 'www.expelliarmus.aragog',
+        ig: event.hashtag.toLowerCase(),
+      }));
       const searchBoxIsOpen = false;
       return {
         ...state,
-        searchResults: [...action.payload],
+        searchResults: [...transformedResults],
         searchBoxIsOpen,
       };
     }

@@ -22,7 +22,7 @@ const apiController = {};
 apiController.search = (req, res, next) => {
   console.log('searchcontroller req body is:', req.body);
   const queryArray = [];
-  billy.query(`SELECT * FROM fake_data WHERE ST_DWithin(geom, ST_MakePoint(${req.body.latitude}, ${req.body.longitude})::geography, 500000) AND date_open <= '${req.body.arrivalDate}' AND date_close >= '${req.body.departureDate}';`, (err, result) => {
+  billy.query(`SELECT * FROM fake_data WHERE ST_DWithin(geom, ST_MakePoint(${req.body.latitude}, ${req.body.longitude})::geography, 5000000) AND date_open <= '${req.body.arrivalDate}' AND date_close >= '${req.body.departureDate}';`, (err, result) => {
     if (err) console.log('we have an errr in search asda', err);
     // res.send('suck');
 
