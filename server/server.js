@@ -49,21 +49,21 @@ app.get('/', (req, res) => {
 
 // TEMPORARY ROUTES START
 // app.post('/api/search', (req, res) => {
-//   const stubResults = [];
-//   const resultTemplate = {
-//     imgUrl: 'http://via.placeholder.com/350x460',
-//     price: '50.99',
-//     www: 'www.tourists-are-us.com',
-//     ig: '#livelaughlove',
-//   };
-//   for (let i = 20; i > 0; i -= 1) {
-//     const name = `Lorem Ipssum ${i}`;
-//     const id = i;
-//     stubResults.push({ ...resultTemplate, name, id });
-//   }
-//   res.status(200);
-//   res.setHeader('Content-type', 'application/json');
-//   res.json(stubResults);
+  // const stubResults = [];
+  // const resultTemplate = {
+    // imgUrl: 'http://via.placeholder.com/350x460',
+    // price: '50.99',
+    // www: 'www.tourists-are-us.com',
+    // ig: '#livelaughlove',
+  // };
+  // for (let i = 20; i > 0; i -= 1) {
+    // const name = `Lorem Ipssum ${i}`;
+    // const id = i;
+    // stubResults.push({ ...resultTemplate, name, id });
+  // }
+  // res.status(200);
+  // res.setHeader('Content-type', 'application/json');
+  // res.json(stubResults);
 // });
 
 app.put('/api/itinerary/add', (req, res) => {
