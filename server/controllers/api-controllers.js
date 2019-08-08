@@ -54,7 +54,7 @@ apiController.getNearby = (req, res, next) => {
         photoReference: json.results[i].photos ? json.results[i].photos[0].photo_reference : "",
         rating: json.results[i].rating,
         vicinity: json.results[i].vicinity,
-        id: json.results[i].id,
+        //id: json.results[i].id,
         lat: json.results[i].geometry.location.lat,
         long: json.results[i].geometry.location.lng,
       };

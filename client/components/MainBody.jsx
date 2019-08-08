@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import SearchModal from './SearchModal.jsx'
 import ResultCard from './ResultCard.jsx'
+import MapContainer from './Map.jsx'
 import * as actions from '../actions/actions.js';
 
 const mapStateToProps = (store) => ({
@@ -10,7 +11,9 @@ const mapStateToProps = (store) => ({
   arrivalDate: store.dumbletour.arrivalDate,
   departureDate: store.dumbletour.departureDate,
   searchResults: store.dumbletour.searchResults,
-  itinerary: store.dumbletour.itinerary
+  itinerary: store.dumbletour.itinerary,
+  inputLat: store.dumbletour.cityLat,
+  inputLong: store.dumbletour.cityLong
 }); 
 
 const mapDispatchToProps = dispatch =>({
@@ -23,7 +26,7 @@ class MainBody extends Component{
         super(props);
     }
     render(){
-        // transform raw results into jsx tags
+        // transform raw results into jsx tagslos anglees
         const resultCards = this.props.searchResults.map((r) => {
           return <ResultCard  key={r.name} 
                               imgUrl={r.imgUrl}
@@ -42,7 +45,8 @@ class MainBody extends Component{
           <Fragment>
             <SearchModal />
           </Fragment>
-          : null}
+          // Append Map to top of MainBody
+          : <MapContainer searchResults={this.props.searchResults} lat={this.props.inputLat} long={this.props.inputLong} />}
           <section className="result-cards">
           {resultCards}
           </section>
