@@ -28,10 +28,12 @@ class MainBody extends Component{
           return <ResultCard  key={r.name} 
                               imgUrl={r.imgUrl}
                               name={r.name} 
-                              price={r.price}
-                              www={r.www}
+                              rating={r.rating}
+                              vicinity={r.address}
                               ig={r.ig}
                               id={r.id}
+                              lat={r.lat}
+                              long ={r.long}
                               itineraryItems={Object.keys(this.props.itinerary)}
                               addToItinerary={this.props.addToItineraryRequest}/>;});
         return(

@@ -53,7 +53,7 @@ export const submitSearch = () => (dispatch, getState) => {
   })
     .then(res => res.json())
     .then(json => {
-      console.log(`We're Looking for JSON here: ${json} <<<<<<<<<<<<<<<<<<<<<<`);
+
       dispatch(searchResults(json))
     });
 };
