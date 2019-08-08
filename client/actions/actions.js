@@ -34,7 +34,12 @@ export const addToItinerary = addedItem => ({
 });
 
 // thunk that handles search request
+// Reconfigure this action to direct to empty squirtle database  ***************
+//Make sure we're sending the correct info to Google to make the api request
 export const submitSearch = () => (dispatch, getState) => {
+
+// make sure this 
+
   const {
     location, latitude, longitude, arrivalDate, departureDate,
   } = getState().dumbletour;
@@ -47,7 +52,10 @@ export const submitSearch = () => (dispatch, getState) => {
     }),
   })
     .then(res => res.json())
-    .then(json => dispatch(searchResults(json)));
+    .then(json => {
+      console.log(`We're Looking for JSON here: ${json} <<<<<<<<<<<<<<<<<<<<<<`);
+      dispatch(searchResults(json))
+    });
 };
 
 // thunk that adds itinerary item

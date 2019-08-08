@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const apiController = require('../controllers/api-controllers');
 
-router.post('/search', apiController.search, (req, res) => {
-  console.log('SPOT ASORAUTE', res.locals.result);
+router.post('/search', apiController.search, apiController.getNearby, (req, res) => {
+  console.log('sending result on res.locals.');
   res.status(200).send(res.locals.result);
 });
 

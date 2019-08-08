@@ -5,8 +5,8 @@ const initialState = {
   registrationIsOpen: false,
   searchBoxIsOpen: true,
   location: '',
-  longitude: 33.981401,
-  latitude: -118.411467,
+  longitude: '', // This may be unnecessary depending on google places api request
+  latitude: '', // This may be unnecessary depending on google places api request
   arrivalDate: '',
   departureDate: '',
   searchResults: [],
@@ -64,13 +64,16 @@ const dumbletourReducer = (state = initialState, action) => {
     }
 
     case types.PROCESS_SEARCH_RESULTS: {
-      const transformedResults = action.payload.map((event) => ({
+      console.log("payload is...", action.payload);
+      const transformedResults = action.payload.map((result) => ({
         // imgUrl: 'http://via.placeholder.com/350x460',
-        imgUrl: 'https://i.imgur.com/IVf2QCK.jpg',
-        name: event.company,
-        price: event.price,
-        www: 'www.expelliarmus.aragog',
-        ig: event.hashtag.toLowerCase(),
+        imgUrl: result.photoReference,
+        address: result.vicinity,
+        name: result.name,
+        rating: result.rating,
+        //price: event.price,
+        //www: 'www.expelliarmus.aragog',
+        //ig: event.hashtag.toLowerCase(),
       }));
       const searchBoxIsOpen = false;
       return {
