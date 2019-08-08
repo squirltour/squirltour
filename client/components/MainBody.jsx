@@ -32,6 +32,8 @@ class MainBody extends Component{
                               vicinity={r.address}
                               ig={r.ig}
                               id={r.id}
+                              lat={r.lat}
+                              long ={r.long}
                               itineraryItems={Object.keys(this.props.itinerary)}
                               addToItinerary={this.props.addToItineraryRequest}/>;});
         return(

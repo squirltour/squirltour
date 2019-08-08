@@ -55,6 +55,8 @@ apiController.getNearby = (req, res, next) => {
         rating: json.results[i].rating,
         vicinity: json.results[i].vicinity,
         id: json.results[i].id,
+        lat: json.results[i].geometry.location.lat,
+        long: json.results[i].geometry.location.lng,
       };
       // Push result to an array.
       nearbyResults.push(tempResult);
