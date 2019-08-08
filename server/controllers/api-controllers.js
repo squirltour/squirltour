@@ -47,13 +47,14 @@ apiController.getNearby = (req, res, next) => {
     let nearbyResults = [];
     let tempResult = {};
 
-    for (let i = 0; i < json.results.length; i++){
+    for (let i = 1; i < json.results.length; i++){
       // Temp object to hold keys of a result.
       tempResult = {
         name: json.results[i].name,
         photoReference: json.results[i].photos ? json.results[i].photos[0].photo_reference : "",
         rating: json.results[i].rating,
         vicinity: json.results[i].vicinity,
+        id: json.results[i].id,
       };
       // Push result to an array.
       nearbyResults.push(tempResult);

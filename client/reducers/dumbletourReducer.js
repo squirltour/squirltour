@@ -66,8 +66,8 @@ const dumbletourReducer = (state = initialState, action) => {
     case types.PROCESS_SEARCH_RESULTS: {
       console.log("payload is...", action.payload);
       const transformedResults = action.payload.map((result) => ({
-        // imgUrl: 'http://via.placeholder.com/350x460',
-        imgUrl: result.photoReference,
+        // imgUrl: '../assets/randomHogwarts.jpg',
+        // imgUrl: result.photoReference,
         address: result.vicinity,
         name: result.name,
         rating: result.rating,

@@ -10,7 +10,7 @@ mongoose.connect(
 
 const dataSchema = mongoose.Schema({
   id: Number,
-  address: String,
+  vicinity: String,
   zip: String,
   country: String,
   phonenumber: String,
@@ -28,5 +28,8 @@ const dataSchema = mongoose.Schema({
 });
 
 const Data = mongoose.model('dummy', dataSchema);
+
+
+
 
 module.exports = Data;
